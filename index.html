@@ -7,15 +7,54 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── DARK THEME (default) ── */
     :root {
-      --bg:        #0d1117;
-      --surface:   #161b22;
-      --border:    #30363d;
-      --accent:    #58a6ff;
-      --accent2:   #3fb950;
-      --text:      #e6edf3;
-      --muted:     #8b949e;
-      --tag-bg:    #1f2937;
+      --bg:           #0d1117;
+      --surface:      #161b22;
+      --header-bg-t:  #161b22;
+      --header-bg-b:  #0d1117;
+      --border:       #30363d;
+      --accent:       #58a6ff;
+      --accent2:      #3fb950;
+      --text:         #e6edf3;
+      --muted:        #8b949e;
+      --tag-bg:       #1f2937;
+      --badge-bsc-bg: #1d3557;
+      --badge-bsc-fg: #58a6ff;
+      --badge-msc-bg: #2d1b4e;
+      --badge-msc-fg: #c084fc;
+      --badge-phd-bg: #1b3a2b;
+      --badge-phd-fg: #3fb950;
+      --icon-blue:    #1d3557;
+      --icon-green:   #1b3a2b;
+      --icon-purple:  #2d1b4e;
+      --icon-orange:  #3a2200;
+    }
+
+    /* ── LIGHT THEME ── */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:           #f6f8fa;
+        --surface:      #ffffff;
+        --header-bg-t:  #ffffff;
+        --header-bg-b:  #f6f8fa;
+        --border:       #d0d7de;
+        --accent:       #0969da;
+        --accent2:      #1a7f37;
+        --text:         #1f2328;
+        --muted:        #656d76;
+        --tag-bg:       #eaeef2;
+        --badge-bsc-bg: #dbeafe;
+        --badge-bsc-fg: #1d4ed8;
+        --badge-msc-bg: #ede9fe;
+        --badge-msc-fg: #6d28d9;
+        --badge-phd-bg: #dcfce7;
+        --badge-phd-fg: #15803d;
+        --icon-blue:    #dbeafe;
+        --icon-green:   #dcfce7;
+        --icon-purple:  #ede9fe;
+        --icon-orange:  #ffedd5;
+      }
     }
 
     body {
@@ -31,7 +70,7 @@
       border-bottom: 1px solid var(--border);
       padding: 3rem 2rem 2.5rem;
       text-align: center;
-      background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+      background: linear-gradient(180deg, var(--header-bg-t) 0%, var(--header-bg-b) 100%);
     }
     header .org {
       font-size: 0.8rem;
@@ -125,10 +164,10 @@
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-    .card-icon.blue   { background: #1d3557; }
-    .card-icon.green  { background: #1b3a2b; }
-    .card-icon.purple { background: #2d1b4e; }
-    .card-icon.orange { background: #3a2200; }
+    .card-icon.blue   { background: var(--icon-blue); }
+    .card-icon.green  { background: var(--icon-green); }
+    .card-icon.purple { background: var(--icon-purple); }
+    .card-icon.orange { background: var(--icon-orange); }
 
     .card-title { font-size: 1.05rem; font-weight: 600; color: var(--text); }
     .card-level {
@@ -231,9 +270,9 @@
       border-radius: 12px;
       font-weight: 500;
     }
-    .badge-bsc  { background: #1d3557; color: #58a6ff; }
-    .badge-msc  { background: #2d1b4e; color: #c084fc; }
-    .badge-phd  { background: #1b3a2b; color: #3fb950; }
+    .badge-bsc  { background: var(--badge-bsc-bg); color: var(--badge-bsc-fg); }
+    .badge-msc  { background: var(--badge-msc-bg); color: var(--badge-msc-fg); }
+    .badge-phd  { background: var(--badge-phd-bg); color: var(--badge-phd-fg); }
 
     /* ── FOOTER ── */
     footer {
